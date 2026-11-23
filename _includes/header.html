@@ -1,0 +1,126 @@
+<style>
+  /* 整體上方導覽列：置中排列、保留上方留白、移除原本底線 */
+  .writer-header {
+    width: 100%;
+    padding: 55px 20px 25px 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+  }
+
+  .writer-nav {
+    max-width: 950px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px; /* 控制各個主分類之間的左右距離 */
+    flex-wrap: wrap;
+    font-family: Georgia, "Noto Serif TC", "Songti TC", "Times New Roman", serif;
+  }
+
+  /* 單一主分類項目 */
+  .nav-item {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* 主分類文字樣式 */
+  .nav-link {
+    text-decoration: none !important;
+    color: #111111 !important;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    padding: 6px 4px;
+    display: inline-block;
+    transition: color 0.2s ease;
+    cursor: pointer;
+  }
+
+  /* 滑鼠移上去時變成紅色 */
+  .nav-item:hover > .nav-link,
+  .nav-link:hover {
+    color: #e02424 !important;
+  }
+
+  /* 下拉選單的隱形緩衝區（防止滑鼠往下移動時選單消失） */
+  .dropdown-wrapper {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 12px;
+    z-index: 1000;
+  }
+
+  /* 滑鼠移到主分類或點擊時，顯示下拉選單 */
+  .nav-item:hover .dropdown-wrapper,
+  .nav-item:focus-within .dropdown-wrapper {
+    display: block;
+  }
+
+  /* 白底陰影下拉方框 */
+  .dropdown-box {
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    min-width: 150px;
+    padding: 8px 0;
+  }
+
+  /* 下拉選單裡面的子分類連結 */
+  .dropdown-box a {
+    display: block;
+    padding: 9px 22px;
+    text-align: center;
+    text-decoration: none !important;
+    color: #111111 !important;
+    font-size: 15px;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+
+  .dropdown-box a:hover {
+    color: #e02424 !important;
+  }
+
+  /* 手機版自動縮小間距 */
+  @media (max-width: 600px) {
+    .writer-nav {
+      gap: 24px;
+    }
+  }
+</style>
+
+<header class="writer-header">
+  <nav class="writer-nav">
+    
+    <!-- 第 1 個按鈕：首頁 -->
+    <div class="nav-item">
+      <a class="nav-link" href="{{ '/' | relative_url }}">首頁</a>
+    </div>
+
+    <!-- 第 2 個按鈕：創作（包含下拉延伸選單） -->
+    <div class="nav-item">
+      <span class="nav-link">創作 Writings</span>
+      <div class="dropdown-wrapper">
+        <div class="dropdown-box">
+          <a href="{{ '/short/' | relative_url }}">散文 / 札記</a>
+          <a href="{{ '/poem/' | relative_url }}">詩</a>
+          <a href="{{ '/novel/' | relative_url }}">小說</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第 3 個按鈕：讀後評感 -->
+    <div class="nav-item">
+      <a class="nav-link" href="{{ '/comment/' | relative_url }}">讀後評感 Review</a>
+    </div>
+
+    <!-- 第 4 個按鈕：關於我（未來可自行修改網址） -->
+    <div class="nav-item">
+      <a class="nav-link" href="{{ '/about/' | relative_url }}">關於我 About</a>
+    </div>
+
+  </nav>
+</header>
