@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 散文 札記
-permalink: /shortwriting/
+permalink: /short/
 ---
 
 這裡收錄了我的散文與詩歌作品。
