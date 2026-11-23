@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 讀後評感
-permalink: /reviews/
+permalink: /comment/
 ---
 
 這裡記錄了我對書籍與音樂專輯（Album）的隨筆與感想。
