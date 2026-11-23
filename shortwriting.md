@@ -1,3 +1,4 @@
+---
 layout: page
 title: 散文 札記
 permalink: /shortwriting/
