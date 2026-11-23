@@ -1,2 +1,7 @@
 title: "jambingroom"
 theme: minima
+header_pages:
+  - shortwriting.md
+  - poem.md
+  - novel.md
+  - comment.md
